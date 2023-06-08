@@ -1,8 +1,8 @@
 "use client";
 
 import "./globals.css";
-import { TaskProvider } from "../context/TaskContext";
-import NavBar from "../components/NavBar";
+import { TaskProvider } from "@/context/TaskContext";
+import NavBar from "@/components/NavBar";
 
 export const metadata = {
   title: "Create Next App",

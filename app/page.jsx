@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Droppable, DragDropContext } from "@hello-pangea/dnd";
-import { TaskContext } from "../context/TaskContext";
-import TaskForm from "../components/TaskForm";
-import TaskStatusSection from "../components/TaskStatus";
-import Filter from "../components/Filter";
+import { TaskContext } from "@/context/TaskContext";
+import TaskForm from "@/components/TaskForm";
+import TaskStatusSection from "@/components/TaskStatus";
+import Filter from "@/components/Filter";
 
 const style = {
   homeBg: `flex flex-col w-[calc(100%-330px)] h-screen bg-skin-fillHome`,

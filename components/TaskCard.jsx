@@ -2,16 +2,16 @@
 
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
-import { TaskContext } from "../context/TaskContext";
+import { TaskContext } from "@/context/TaskContext";
 import { Draggable } from "@hello-pangea/dnd";
-// import {
-//   taskIcon,
-//   deleteIcon,
-//   dueDateIcon,
-//   priorityIcon,
-//   complexityIcon,
-// } from "../Svg";
-import DeleteConfirmCard from "./DeleteConfirmCard";
+import {
+  taskIcon,
+  deleteIcon,
+  dueDateIcon,
+  priorityIcon,
+  complexityIcon,
+} from "@/components/Svg";
+import DeleteConfirmCard from "@/components/DeleteConfirmCard";
 
 const TaskCard = ({ onDelete, taskList }) => {
   const { setSelectedTaskForPage, showDateTime, showComplexity, showPriority } =
@@ -75,10 +75,7 @@ const TaskCard = ({ onDelete, taskList }) => {
                 >
                   <div className="flex flex-row justify-between py-3">
                     <div className="flex flex-row gap-2 text-base">
-                      <div className="pt-1">
-                        {/* {taskIcon()} */}
-                        taskIcon
-                      </div>
+                      <div className="pt-1">{taskIcon()}</div>
                       <span>Task: {task.taskName}</span>
                     </div>
                     <div className="flex flex-row gap-2 pr-2">
@@ -88,17 +85,13 @@ const TaskCard = ({ onDelete, taskList }) => {
                           handleOpenDeleteCard(task);
                         }}
                       >
-                        {/* {deleteIcon()} */}
-                        deleteIcon
+                        {deleteIcon()}
                       </button>
                     </div>
                   </div>
                   {showDateTime && (
                     <div className="flex flex-row gap-2 pb-1 text-sm">
-                      <div className="pt-1">
-                        {/* {dueDateIcon()} */}
-                        dueDateIcon
-                      </div>
+                      <div className="pt-1">{dueDateIcon()}</div>
                       <span>
                         Due Date: {task.date} at {task.time}
                       </span>
@@ -107,20 +100,14 @@ const TaskCard = ({ onDelete, taskList }) => {
 
                   {showPriority && (
                     <div className="flex flex-row gap-2 pb-1 text-sm">
-                      <div className="pt-1">
-                        {/* {priorityIcon()} */}
-                        priorityIcon
-                      </div>
+                      <div className="pt-1">{priorityIcon()}</div>
                       <span>Priority: {task.priority}</span>
                     </div>
                   )}
 
                   {showComplexity && (
                     <div className="flex flex-row gap-2 pb-1 text-sm">
-                      <div className="pt-1">
-                        {/* {complexityIcon()} */}
-                        complexityIcon
-                      </div>
+                      <div className="pt-1">{complexityIcon()}</div>
                       <span>Complexity: {task.complexity}</span>
                     </div>
                   )}

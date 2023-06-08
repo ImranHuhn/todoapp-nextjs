@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useContext, useState } from "react";
-// import { additionIcon, settingsIcon } from "../Svg";
-import TaskCard from "../components/TaskCard";
-import { TaskContext } from "../context/TaskContext";
-import HideStatus from "../components/HideStatus";
+import React, { useContext } from "react";
+import { additionIcon } from "@/components/Svg";
+import TaskCard from "@/components/TaskCard";
+import { TaskContext } from "@/context/TaskContext";
+import HideStatus from "@/components/HideStatus";
 
 const style = {
   subTitleBg: `  flex  flex-col  gap-3 m-2 px-3 py-2 w-[21rem] min-w-[21rem]  `,
@@ -24,8 +24,7 @@ const TaskStatusSection = ({ title, onDelete, selectedStatus }) => {
         <span>{title}</span>
         <div className={style.subIconContainer}>
           <button className="focus:outline-none" onClick={handleOpenTask}>
-            {/* {additionIcon()} */}
-            additionIcon
+            {additionIcon()}
           </button>
           <div className="pt-1">
             <HideStatus />

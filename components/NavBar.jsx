@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { TaskContext } from "../context/TaskContext";
-// import { CmdIcon } from "../Svg";
+import { TaskContext } from "@/context/TaskContext";
 
 const Navbar = () => {
   const { isCmdPalette, setIsCmdPalette, handleOpenTask } =

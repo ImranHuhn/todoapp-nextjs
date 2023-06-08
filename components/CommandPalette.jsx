@@ -1,12 +1,12 @@
 import React, { useContext, useState, useEffect, Fragment } from "react";
 import { useHistory } from "react-router-dom";
-import { TaskContext } from "../context/TaskContext";
+import { TaskContext } from "@/context/TaskContext";
 import { Dialog, Combobox, Transition } from "@headlessui/react";
-// import { SearchIcon } from "../public/Svg";
-
+import { SearchIcon } from "@/components/Svg";
 
 const CommandPalette = () => {
-  const { taskList, isCmdPalette, setIsCmdPalette, setSelectedTaskForPage } = useContext(TaskContext);
+  const { taskList, isCmdPalette, setIsCmdPalette, setSelectedTaskForPage } =
+    useContext(TaskContext);
   const [query, setQuery] = useState("");
 
   const filteredTaskTitle = query
@@ -15,15 +15,13 @@ const CommandPalette = () => {
       )
     : [];
   const history = useHistory();
-  
 
   const handleChange = (task) => {
     setIsCmdPalette(false);
     setSelectedTaskForPage(null);
-    history.push(`/tasks/${task.id}`);
     // history.push(`/tasks/${task.id}`);
   };
-    
+
   useEffect(() => {
     const onKeyDown = (e) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
@@ -34,11 +32,17 @@ const CommandPalette = () => {
     return () => {
       window.removeEventListener("keydown", onKeyDown);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCmdPalette]);
 
   return (
-    <Transition.Root show={isCmdPalette} as={Fragment} afterLeave={()=>{setQuery("")}}>
+    <Transition.Root
+      show={isCmdPalette}
+      as={Fragment}
+      afterLeave={() => {
+        setQuery("");
+      }}
+    >
       <Dialog
         onClose={setIsCmdPalette}
         className=" fixed inset-0 p-4 pt-[25vh] overflow-y-auto"
@@ -66,8 +70,7 @@ const CommandPalette = () => {
                 className="realtive bg-white max-w-xl mx-auto mt-[25vh] rounded-xl shadow-2xl ring-1 ring-black/5 focus:ring-0 divide-y divide-gray-100 overflow-hidden"
               >
                 <div className="flex items-center px-4">
-                  {/* {SearchIcon()} */}
-                  SearchIcon
+                  {SearchIcon()}
                   <Combobox.Input
                     onChange={(e) => {
                       setQuery(e.target.value);

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import PriorityButtons from "../components/PriorityButtons";
-import ComplexityButtons from "../components/ComplexityButtons";
-import SubTaskList from "../components/SubTaskList";
+import PriorityButtons from "@/components/PriorityButtons";
+import ComplexityButtons from "@/components/ComplexityButtons";
+import SubTaskList from "@/components/SubTaskList";
 
 const statusOptions = [
   { label: "BackLog", value: "backlog" },

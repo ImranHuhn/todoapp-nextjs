@@ -1,20 +1,18 @@
-"use client"
+"use client";
 
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
-import { TaskContext } from "../../../context/TaskContext";
-// import {
-//   backChevron,
-//   menuLeft,
-//   menuRight,
-//   taskPageTaskIcon,
-//   dateTimeIcon,
-//   priorityIcon,
-//   complexityIcon,
-//   statusIcon,
-//   labelIcon,
-//   subTaskIcon,
-// } from "../../Svg";
+import { TaskContext } from "@/context/TaskContext";
+import {
+  backChevron,
+  menuLeft,
+  taskPageTaskIcon,
+  dateTimeIcon,
+  priorityIcon,
+  complexityIcon,
+  labelIcon,
+  subTaskIcon,
+} from "@/components/Svg";
 
 const style = {
   topBg: `flex flex-row justify-between mx-6 mt-2 mb-4`,
@@ -36,19 +34,12 @@ const TaskPage = (props) => {
     <div className="overflow-x-hidden	">
       <div className={style.topBg}>
         <div className={style.homeContainer}>
-          {/* {menuLeft()} */}
-          menuLeftIcon
-          <Link href="/">
-            {/* {backChevron()} */}
-            backChevronIcon
-          </Link>
+          {menuLeft()}
+          <Link href="/">{backChevron()}</Link>
         </div>
       </div>
       <div className={style.taskTitleBg}>
-        <div className="items-center ml-6	">
-          {/* {taskPageTaskIcon()} */}
-          taskPageTaskIcon
-        </div>
+        <div className="items-center ml-6	">{taskPageTaskIcon()}</div>
         <div>{task && <p>{task.taskName} </p>}</div>
       </div>
 
@@ -61,10 +52,7 @@ const TaskPage = (props) => {
 
           <div className={style.subtaskContainerSpacing}>
             <div className={style.subTaskTitle}>
-              <span>
-                {/* {subTaskIcon()} */}
-                subTaskIcon
-              </span>
+              <span>{subTaskIcon()}</span>
               <p>Sub tasks</p>
             </div>
             <div className="pl-6">
@@ -86,10 +74,7 @@ const TaskPage = (props) => {
         </div>
         <div className={style.spacingBetweenContainers}>
           <div className={style.containerSpacings}>
-            <span>
-              {/* {dateTimeIcon()} */}
-              dateTimeIcon
-            </span>
+            <span>{dateTimeIcon()}</span>
             {task && (
               <p>
                 Due Date:{task.date} at {task.time}
@@ -97,32 +82,20 @@ const TaskPage = (props) => {
             )}
           </div>
           <div className={style.containerSpacings}>
-            <span>
-              {/* {priorityIcon()} */}
-              priorityIcon
-            </span>
+            <span>{priorityIcon()}</span>
             {task && <p>Priority:{task.priority} </p>}
           </div>
           <div className={style.containerSpacings}>
-            <span>
-              {/* {complexityIcon()} */}
-              complexityIcon
-            </span>
+            <span>{complexityIcon()}</span>
 
             {task && <p>Complexity:{task.complexity} </p>}
           </div>
           <div className={style.containerSpacings}>
-            <span>
-              {/* {complexityIcon()} */}
-              complexityIcon
-            </span>
+            <span>{complexityIcon()}</span>
             {task && <p>Status:{task.status} </p>}
           </div>
           <div className={style.containerSpacings}>
-            <span>
-              {/* {labelIcon()} */}
-              labelIcon
-            </span>
+            <span>{labelIcon()}</span>
             {task && <p>Tag:{task.tags} </p>}
           </div>
         </div>

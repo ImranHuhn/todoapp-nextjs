@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import { TaskContext } from "../context/TaskContext";
-import { displayIcon, downIcon } from "../public/Svg";
+import { TaskContext } from "@/context/TaskContext";
+import { displayIcon, downIcon } from "@/components/Svg";
 const style = {
   buttonBg: `bg-gray-100 border border-solid rounded flex flex-row gap-2 items-center px-1 py-0.5 text-sm shadow-md hover:bg-gray-200 hover:shadow-lg active:shadow-sm `,
   popUpBg: `bg-gray-100 border border-solid rounded px-2 py-0.5 shadow transition-opacity duration-300 absolute w-[200px] z-9 top-[30px] `,
@@ -21,10 +21,8 @@ const Filter = () => {
       <div className="group" onClick={handleDropDown}>
         <button className={style.buttonBg}>
           {displayIcon()}
-          displayIcon
           <span> Display</span>
           {downIcon()}
-          downIcon
         </button>
       </div>
       {dropDownOpen && (
