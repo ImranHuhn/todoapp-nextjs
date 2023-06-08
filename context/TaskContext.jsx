@@ -48,6 +48,7 @@ export const TaskProvider = ({ children }) => {
   };
 
   const handleOpenTask = (e) => {
+    console.log("open")
     setShowTaskForm(true);
   };
 

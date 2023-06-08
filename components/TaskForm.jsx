@@ -84,11 +84,6 @@ const TaskForm = ({ onDiscard, onSave, onClose }) => {
         id: uuidv4(),
       };
 
-
-      
-  
-      
-  
       setSubTaskList([]);
       setInputTask("");
       setInputDate("");
@@ -100,7 +95,6 @@ const TaskForm = ({ onDiscard, onSave, onClose }) => {
       onSave(taskItem, status);
       onClose();
 
-     
     }
   };
 

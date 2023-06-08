@@ -99,6 +99,7 @@ export default function Home() {
     // Update the task list state
     setTaskList(updatedTaskList);
   };
+  console.log("test", showTaskForm)
   return (
     <div className={style.homeBg}>
       <div className="bg-skin-fill flex flex-row items-center justify-between pl-5 py-6">
@@ -152,12 +153,14 @@ export default function Home() {
 
       <div
         className={`fixed inset-0 flex justify-center items-center z-50 ${
+          // true ? "visible" : "invisible"
           showTaskForm ? "visible" : "invisible"
         }`}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
         <div
           className={`relative transition-transform duration-500 ${
+            // true ? "translate-y-0" : "translate-y-full"
             showTaskForm ? "translate-y-0" : "translate-y-full"
           }`}
         >

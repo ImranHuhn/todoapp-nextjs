@@ -23,7 +23,9 @@ const TaskStatusSection = ({ title, onDelete, selectedStatus }) => {
       <div className={style.subTitleSpacing}>
         <span>{title}</span>
         <div className={style.subIconContainer}>
-          {/* <button className="focus:outline-none" onClick={handleOpenTask}>{additionIcon()}</button> */}
+          <button className="focus:outline-none" onClick={handleOpenTask}>
+            {/* {additionIcon()} */}test
+          </button>
           <div className="pt-1"><HideStatus/></div>
 
         </div>
