@@ -4,6 +4,8 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { TaskProvider } from "../context/TaskContext";
 
+import NavBar from "../components/NavBar";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,7 +18,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <TaskProvider>
         <body className={inter.className}>
-          {children}
+          <div className="flex">
+            <NavBar />
+            {children}
+          </div>
         </body>
       </TaskProvider>
     </html>
