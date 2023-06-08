@@ -2,22 +2,19 @@
 
 import React, { useState, useEffect, createContext } from "react";
 
-//////////////////////////////////////////////////////////////
-// plan to utilize node server. "window" will not work in nextjs. use custom hooks for local storage
 const useLocalState = (key, initial) => {
   const [value, setValue] = useState(() => {
-    const saved = localStorage.getItem(key);
-    if (saved !== null) {
-      return JSON.parse(saved);
-    }
+      const saved = window.localStorage.getItem(key);
+      if (saved !== null) {
+        return JSON.parse(saved);
+      }
     return initial;
   });
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value));
+      localStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
   return [value, setValue];
 };
-//////////////////////////////////////////////////////////////
 
 export const TaskContext = createContext();
 
