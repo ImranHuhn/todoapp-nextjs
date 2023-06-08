@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useState, Context, useEffect } from "react";
-import { createContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
 
 const useLocalState = (key, initial) => {
   const [value, setValue] = useState(() => {
@@ -26,12 +25,12 @@ export const TaskContext = createContext();
 export const TaskProvider = ({ children }) => {
   const [taskList, setTaskList] = useLocalState("my-todo-list", []);
   const [selectedTaskForPage, setSelectedTaskForPage] = useState(null);
-
   const [showDateTime, setShowDateTime] = useState(true);
   const [showPriority, setShowPriority] = useState(true);
   const [showComplexity, setShowComplexity] = useState(true);
-  const [showTaskForm, setShowTaskForm] = useState(false);
   const [isCmdPalette, setIsCmdPalette] = useState(false);
+
+  const [showTaskForm, setShowTaskForm] = useState(false);
 
   const handleToggleDateTime = () => {
     setShowDateTime(!showDateTime);
@@ -75,10 +74,10 @@ export const TaskProvider = ({ children }) => {
         showPriority,
         handleTogglePriority,
         handleOpenTask,
-        showTaskForm,
-        setShowTaskForm,
         isCmdPalette,
         setIsCmdPalette,
+        setShowTaskForm,
+        showTaskForm,
       }}
     >
       {children}

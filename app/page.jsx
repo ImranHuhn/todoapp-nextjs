@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useContext, useEffect, useState } from "react";
 import { Droppable, DragDropContext } from "@hello-pangea/dnd";
@@ -9,18 +9,17 @@ import Filter from "../components/Filter";
 
 const style = {
   homeBg: `flex flex-col w-[calc(100%-330px)] h-screen bg-skin-fillHome`,
-  subTitcleContainer: `flex flex-row h-[inherit] overflow-auto mb-4 pl-6`,
+  subTitleContainer: `flex flex-row h-[inherit] overflow-auto mb-4 pl-6`,
 };
 
 export default function Home() {
   const {
     taskList,
     setTaskList,
-    showTaskForm,
-    setShowTaskForm,
     handleOpenTask,
+    setShowTaskForm,
+    showTaskForm, 
   } = useContext(TaskContext);
-  console.log(taskList)
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -49,7 +48,6 @@ export default function Home() {
       ...taskItem,
       status: status === "backlog" ? "backlog" : "todo",
     };
-
     setTaskList((prevTaskList) => [...prevTaskList, newTask]);
     setShowTaskForm(false);
     handleClose();
@@ -112,7 +110,7 @@ export default function Home() {
       </div>
 
       <DragDropContext onDragEnd={handleDragEnd}>
-        <div className={style.subTitcleContainer}>
+        <div className={style.subTitleContainer}>
           <Droppable droppableId="backlog">
             {(provided, snapshot) => (
               <div

@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { TaskContext } from "@/context/TaskContext";
+import { TaskProvider } from "../context/TaskContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,9 +14,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <TaskContext.Provider>
-        <body className={inter.className}>{children}</body>
-      </TaskContext.Provider>
+      <TaskProvider>
+        {/* <body className={inter.className}> */}
+          {children}
+        {/* </body> */}
+      </TaskProvider>
     </html>
   );
 }
