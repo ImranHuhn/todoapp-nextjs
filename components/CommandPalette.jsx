@@ -21,12 +21,8 @@ const CommandPalette = () => {
     setIsCmdPalette(false);
     setSelectedTaskForPage(null);
     history.push(`/tasks/${task.id}`);
-
   };
     
-
-  
-
   useEffect(() => {
     const onKeyDown = (e) => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
