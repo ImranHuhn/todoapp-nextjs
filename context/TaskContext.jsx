@@ -2,22 +2,18 @@
 
 import React, { useState, useEffect, createContext } from "react";
 
+//////////////////////////////////////////////////////////////
+// plan to utilize node server. "window" will not work in nextjs. use custom hooks for local storage
 const useLocalState = (key, initial) => {
-  //////////////////////////////////////////////////////////////
-  // plan to utilize node server. "window" will not work in nextjs
   const [value, setValue] = useState(() => {
-    if (typeof window !== "undefined") {
-      const saved = window.localStorage.getItem(key);
-      if (saved !== null) {
-        return JSON.parse(saved);
-      }
+    const saved = localStorage.getItem(key);
+    if (saved !== null) {
+      return JSON.parse(saved);
     }
     return initial;
   });
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(key, JSON.stringify(value));
-    }
+    localStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
   return [value, setValue];
 };
