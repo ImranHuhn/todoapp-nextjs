@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 import PriorityButtons from "../components/PriorityButtons";
 import ComplexityButtons from "../components/ComplexityButtons";
 import SubTaskList from "../components/SubTaskList";
-
 
 const statusOptions = [
   { label: "BackLog", value: "backlog" },
@@ -21,7 +20,6 @@ const TaskForm = ({ onDiscard, onSave, onClose }) => {
   const [inputTags, setInputTags] = useState("");
   const [status, setStatus] = useState("todo");
   const [subTaskList, setSubTaskList] = useState([]);
-
 
   const handleChangeTask = (e) => {
     setInputTask(e.target.value);
@@ -94,7 +92,6 @@ const TaskForm = ({ onDiscard, onSave, onClose }) => {
 
       onSave(taskItem, status);
       onClose();
-
     }
   };
 
@@ -163,7 +160,10 @@ const TaskForm = ({ onDiscard, onSave, onClose }) => {
 
               <ul>
                 {subTaskList.map((taskItem, index) => (
-                  <li className="bg-white rounded-full py-1 pl-4 pr-2 my-2" key={index}>
+                  <li
+                    className="bg-white rounded-full py-1 pl-4 pr-2 my-2"
+                    key={index}
+                  >
                     {taskItem}
                   </li>
                 ))}

@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useContext, useState } from "react";
 // import { additionIcon, settingsIcon } from "../Svg";
 import TaskCard from "../components/TaskCard";
@@ -11,12 +13,10 @@ const style = {
 };
 
 const TaskStatusSection = ({ title, onDelete, selectedStatus }) => {
-  const { taskList, handleOpenTask} = useContext(TaskContext)
+  const { taskList, handleOpenTask } = useContext(TaskContext);
   const filteredTasks = taskList.filter(
     (task) => task && task.status === selectedStatus
   );
-
-
 
   return (
     <div className={style.subTitleBg}>
@@ -26,8 +26,9 @@ const TaskStatusSection = ({ title, onDelete, selectedStatus }) => {
           <button className="focus:outline-none" onClick={handleOpenTask}>
             {/* {additionIcon()} */}test
           </button>
-          <div className="pt-1"><HideStatus/></div>
-
+          <div className="pt-1">
+            <HideStatus />
+          </div>
         </div>
       </div>
       <TaskCard taskList={filteredTasks} onDelete={onDelete} />

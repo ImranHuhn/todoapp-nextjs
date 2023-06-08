@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useContext, useEffect, useState } from "react";
 import Link from "next/link";
@@ -14,12 +14,12 @@ import { Draggable } from "@hello-pangea/dnd";
 import DeleteConfirmCard from "./DeleteConfirmCard";
 
 const TaskCard = ({ onDelete, taskList }) => {
-  const { setSelectedTaskForPage, showDateTime, showComplexity, showPriority } = useContext(TaskContext);
+  const { setSelectedTaskForPage, showDateTime, showComplexity, showPriority } =
+    useContext(TaskContext);
 
   const [showDeleteCard, setShowDeleteCard] = useState(false);
   const [deleteFade, setDeleteFade] = useState(false);
   const [selectedTask, setSelectedTask] = useState(null);
- 
 
   const handleDelete = () => {
     onDelete(selectedTask);
@@ -38,9 +38,9 @@ const TaskCard = ({ onDelete, taskList }) => {
     setDeleteFade(false);
   };
 
-  const handleShowDateTime =() =>{
-    setShowDeleteCard(!showDateTime)
-  }
+  const handleShowDateTime = () => {
+    setShowDeleteCard(!showDateTime);
+  };
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -100,21 +100,17 @@ const TaskCard = ({ onDelete, taskList }) => {
 
                   {showPriority && (
                     <div className="flex flex-row gap-2 pb-1 text-sm">
-                    {/* <div className="pt-1">{priorityIcon()}</div> */}
-                    <span>Priority: {task.priority}</span>
-                  </div>
-
+                      {/* <div className="pt-1">{priorityIcon()}</div> */}
+                      <span>Priority: {task.priority}</span>
+                    </div>
                   )}
 
                   {showComplexity && (
                     <div className="flex flex-row gap-2 pb-1 text-sm">
-                    {/* <div className="pt-1">{complexityIcon()}</div> */}
-                    <span>Complexity: {task.complexity}</span>
-                  </div>
-
+                      {/* <div className="pt-1">{complexityIcon()}</div> */}
+                      <span>Complexity: {task.complexity}</span>
+                    </div>
                   )}
-                  
-                  
                 </div>
               </Link>
             </div>
