@@ -4,7 +4,7 @@ import React, { useState, useEffect, createContext } from "react";
 
 const useLocalState = (key, initial) => {
   const [value, setValue] = useState(() => {
-      const saved = window.localStorage.getItem(key);
+      const saved = localStorage.getItem(key);
       if (saved !== null) {
         return JSON.parse(saved);
       }
