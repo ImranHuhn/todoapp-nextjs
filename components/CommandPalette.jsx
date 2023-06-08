@@ -21,6 +21,7 @@ const CommandPalette = () => {
     setIsCmdPalette(false);
     setSelectedTaskForPage(null);
     history.push(`/tasks/${task.id}`);
+    // history.push(`/tasks/${task.id}`);
   };
     
   useEffect(() => {
