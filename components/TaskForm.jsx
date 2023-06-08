@@ -157,7 +157,6 @@ const TaskForm = ({ onDiscard, onSave, onClose }) => {
                 onAddSubtask={handleAddSubtask}
                 subtasks={subTaskList}
               />
-
               <ul>
                 {subTaskList.map((taskItem, index) => (
                   <li
@@ -169,7 +168,6 @@ const TaskForm = ({ onDiscard, onSave, onClose }) => {
                 ))}
               </ul>
             </div>
-
             <div className="flex flex-col gap-2">
               <span>Add Tags</span>
               <input

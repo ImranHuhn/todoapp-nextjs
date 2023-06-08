@@ -18,7 +18,7 @@ export default function Home() {
     setTaskList,
     handleOpenTask,
     setShowTaskForm,
-    showTaskForm, 
+    showTaskForm,
   } = useContext(TaskContext);
 
   useEffect(() => {
@@ -99,11 +99,11 @@ export default function Home() {
     // Update the task list state
     setTaskList(updatedTaskList);
   };
-  console.log("test", showTaskForm)
+  console.log("test", showTaskForm);
   return (
     <div className={style.homeBg}>
       <div className="bg-skin-fill flex flex-row items-center justify-between pl-5 py-6">
-        <div></div>
+        {/* <div></div> */}
 
         <div>
           <Filter />

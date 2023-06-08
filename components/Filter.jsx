@@ -21,8 +21,10 @@ const Filter = () => {
       <div className="group" onClick={handleDropDown}>
         <button className={style.buttonBg}>
           {/* {displayIcon()} */}
+          displayIcon
           <span> Display</span>
           {/* {downIcon()} */}
+          downIcon
         </button>
       </div>
       {dropDownOpen && (
@@ -30,7 +32,9 @@ const Filter = () => {
           <div className=" flex flex-row justify-between	items-center my-1 gap-2">
             <span className={style.layoutText}>Layout</span>
             <div className="">
-              <button className="border bg-green px-1 mr-1 text-sm">List</button>
+              <button className="border bg-green px-1 mr-1 text-sm">
+                List
+              </button>
               <button className="border bg-red px-1 text-sm">Board</button>
             </div>
           </div>
