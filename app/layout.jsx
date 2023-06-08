@@ -15,9 +15,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <TaskProvider>
-        {/* <body className={inter.className}> */}
+        <body className={inter.className}>
           {children}
-        {/* </body> */}
+        </body>
       </TaskProvider>
     </html>
   );
