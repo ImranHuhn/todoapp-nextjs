@@ -3,6 +3,8 @@
 import React, { useState, useEffect, createContext } from "react";
 
 const useLocalState = (key, initial) => {
+  //////////////////////////////////////////////////////////////
+  // plan to utilize node server. "window" will not work in nextjs
   const [value, setValue] = useState(() => {
     if (typeof window !== "undefined") {
       const saved = window.localStorage.getItem(key);
@@ -19,6 +21,7 @@ const useLocalState = (key, initial) => {
   }, [key, value]);
   return [value, setValue];
 };
+//////////////////////////////////////////////////////////////
 
 export const TaskContext = createContext();
 
