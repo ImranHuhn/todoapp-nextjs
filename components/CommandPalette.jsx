@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect, Fragment } from "react";
 import { useHistory } from "react-router-dom";
 import { TaskContext } from "../context/TaskContext";
 import { Dialog, Combobox, Transition } from "@headlessui/react";
-// import { SearchIcon } from "../Svg";
+// import { SearchIcon } from "../public/Svg";
 
 
 const CommandPalette = () => {
@@ -66,7 +66,8 @@ const CommandPalette = () => {
                 className="realtive bg-white max-w-xl mx-auto mt-[25vh] rounded-xl shadow-2xl ring-1 ring-black/5 focus:ring-0 divide-y divide-gray-100 overflow-hidden"
               >
                 <div className="flex items-center px-4">
-                  {SearchIcon()}
+                  {/* {SearchIcon()} */}
+                  SearchIcon
                   <Combobox.Input
                     onChange={(e) => {
                       setQuery(e.target.value);
